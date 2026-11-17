@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+@tailwind base;@tailwind components;@tailwind utilities;
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#faf8f5;color:#403a36;font-family:'Be Vietnam Pro',sans-serif}.serif{font-family:'Cormorant Garamond',serif}.kicker{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#8c8580}.section{padding:85px 22px}.heading{font:400 clamp(38px,7vw,62px)/1.05 'Cormorant Garamond',serif}.rule{width:42px;height:1px;background:#c8b8aa;margin:22px auto}.cover{min-height:100svh;position:relative;display:grid;place-items:center;overflow:hidden}.cover:after{content:'';position:absolute;inset:0;background:linear-gradient(#0001,#0007)}.cover-content{position:relative;z-index:1;color:white;text-align:center;padding:24px;text-shadow:0 2px 18px #0005}.btn{border:1px solid #ffffffbd;color:white;background:#ffffff20;padding:13px 28px;border-radius:99px;font-size:11px;letter-spacing:.15em}.card{background:#ffffffa8;border:1px solid #eee8e0;border-radius:18px;padding:25px}.gridphotos{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.gridphotos img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px}.music{position:fixed;right:18px;bottom:18px;z-index:10;border-radius:50%;background:white;padding:14px;border:1px solid #eee}.modal{position:fixed;inset:0;background:#171411ee;z-index:20;display:grid;place-items:center;padding:20px}.modal img{max-width:100%;max-height:85vh}@media(min-width:760px){.section{padding:110px 24px}.gridphotos{grid-template-columns:repeat(4,1fr)}}
+.opening-screen {
+  min-height: 100svh;
+  background: #fbf3f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.opening-label {
+  color: #a77d80;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  margin-bottom: 30px;
+}
+
+.opening-photo {
+  width: min(100%, 500px);
+  height: min(52vh, 450px);
+  min-height: 280px;
+  overflow: hidden;
+  border-radius: 190px 190px 14px 14px;
+  box-shadow: 0 15px 50px rgba(120, 85, 80, 0.10);
+}
+
+.opening-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.opening-names {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 8vw, 88px);
+  color: #514448;
+  line-height: 1.15;
+  margin-top: 20px;
+}
+
+.opening-names span {
+  color: #d9a4aa;
+  font-style: italic;
+}
+
+.opening-date {
+  color: #987c80;
+  font-size: 13px;
+  letter-spacing: 0.28em;
+  margin-top: 12px;
+}
+
+.opening-button {
+  border: 1px solid #dcaeb0;
+  color: #a2767a;
+  background: #fffaf9;
+  border-radius: 50px;
+  padding: 15px 30px;
+  margin-top: 28px;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  transition: all .3s ease;
+}
+
+.opening-button:hover {
+  background: #f4e5e4;
+  transform: translateY(-2px);
+}
+
+.opening-button span {
+  margin-left: 8px;
+}
+
+.opening-footer {
+  color: #b18f91;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  margin-top: 30px;
+}
+
+.opening-flower {
+  position: absolute;
+  color: #e7cfd0;
+  font-size: 25px;
+}
+
+.flower-one {
+  left: calc(50% - 330px);
+  top: 43%;
+}
+
+.flower-two {
+  right: calc(50% - 330px);
+  top: 70%;
+}
+
+@media (max-width: 600px) {
+  .opening-photo {
+    width: min(90%, 360px);
+    height: 42vh;
+    min-height: 250px;
+  }
+
+  .opening-label {
+    margin-bottom: 24px;
+  }
+
+  .flower-one {
+    left: 5%;
+  }
+
+  .flower-two {
+    right: 5%;
+  }
+}
+
+.wedding-hero {
+  height: 100svh;
+  min-height: 600px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #554e49;
+}
+
+.wedding-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+}
+
+.wedding-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(25, 21, 19, 0.35);
+}
+
+.wedding-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  animation: heroFade 1.5s ease both;
+}
+
+.hero-subtitle {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  margin-bottom: 25px;
+}
+
+.hero-names {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(65px, 10vw, 145px);
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.hero-names span {
+  color: #e5aeb4;
+  font-style: italic;
+}
+
+.hero-date {
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  margin-top: 28px;
+}
+
+.hero-scroll {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 75px;
+  color: white;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+}
+
+.hero-scroll span {
+  font-size: 22px;
+  animation: scrollDown 1.5s infinite;
+}
+
+.hero-side-text {
+  position: absolute;
+  z-index: 2;
+  right: 25px;
+  bottom: 35px;
+  color: white;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  writing-mode: vertical-rl;
+}
+
+@keyframes heroFade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(7px); }
+}
+
+@media (max-width: 600px) {
+  .wedding-hero {
+    min-height: 650px;
+  }
+
+  .hero-names {
+    font-size: clamp(48px, 11vw, 72px);
+  }
+
+  .hero-subtitle {
+    font-size: 10px;
+  }
+
+  .hero-scroll {
+    margin-top: 65px;
+  }
+
+  .hero-side-text {
+    right: 12px;
+    bottom: 20px;
+  }
+}
+/* Font toàn website */
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 300;
+}
+
+/* Tiêu đề lớn */
+.heading,
+.serif,
+.opening-names,
+.hero-names {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+
+/* Chữ nghiêng trang trí */
+.heading em,
+.heading-italic {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #b27d83;
+}
+
+/* Nội dung phụ */
+.kicker,
+.hero-subtitle,
+.hero-date,
+.hero-scroll {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 400;
+}
+.music {
+  position: fixed;
+  right: 25px;
+  top: 25px;
+  bottom: auto;
+  z-index: 30;
+
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: rgba(255,255,255,.85);
+  border: 1px solid #f0e5e3;
+  color: #bd8991;
+
+  box-shadow: 0 8px 25px rgba(120,85,80,.10);
+  backdrop-filter: blur(8px);
+}
+
+.music-playing svg {
+  animation: musicRotate 4s linear infinite;
+}
+
+@keyframes musicRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.music:hover {
+  transform: scale(1.08);
+  transition: .3s ease;
+}
+
+@media (max-width: 600px) {
+  .music {
+    width: 44px;
+    height: 44px;
+    right: 15px;
+    top: 15px;
+  }
+}
+
+/* Chữ xuất hiện mềm mại */
+@keyframes romanticReveal {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes romanticZoom {
+  from {
+    opacity: 0;
+    transform: scale(.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-subtitle {
+  animation: romanticReveal 1.2s ease both;
+  animation-delay: .2s;
+}
+
+.hero-names {
+  animation: romanticZoom 1.6s ease both;
+  animation-delay: .5s;
+}
+
+.hero-date {
+  animation: romanticReveal 1.2s ease both;
+  animation-delay: 1s;
+}
+
+.hero-scroll {
+  animation: romanticReveal 1.2s ease both;
+  animation-delay: 1.5s;
+}
+
+/* Tiêu đề các phần */
+.heading {
+  animation: romanticReveal 1.2s ease both;
+}
+
+/* Hiệu ứng chữ nghiêng */
+.heading em,
+.heading-italic {
+  display: inline-block;
+  animation: romanticReveal 1.5s ease both;
+}
+
+/* Lớp hoa rơi */
+.falling-flowers {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 25;
+}
+
+/* Cánh hoa */
+.falling-petal {
+  position: absolute;
+  top: -35px;
+  width: 11px;
+  height: 16px;
+  border-radius: 90% 0 90% 0;
+  background: linear-gradient(
+    135deg,
+    #f5d9dc,
+    #dcaeb5
+  );
+  opacity: 0;
+  animation: petalFall linear infinite;
+}
+
+/* Rơi và lắc nhẹ */
+@keyframes petalFall {
+  0% {
+    transform: translate3d(0, -30px, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: .75;
+  }
+  50% {
+    transform: translate3d(45px, 50vh, 0) rotate(180deg);
+    opacity: .65;
+  }
+  90% {
+    opacity: .45;
+  }
+  100% {
+    transform: translate3d(-25px, 110vh, 0) rotate(420deg);
+    opacity: 0;
+  }
+}
+
+/* Vị trí, tốc độ và thời gian bắt đầu khác nhau */
+.petal-1 { left: 5%; animation-duration: 13s; animation-delay: 0s; }
+.petal-2 { left: 15%; animation-duration: 17s; animation-delay: 3s; }
+.petal-3 { left: 25%; animation-duration: 15s; animation-delay: 6s; }
+.petal-4 { left: 35%; animation-duration: 19s; animation-delay: 1s; }
+.petal-5 { left: 45%; animation-duration: 14s; animation-delay: 5s; }
+.petal-6 { left: 55%; animation-duration: 18s; animation-delay: 2s; }
+.petal-7 { left: 65%; animation-duration: 16s; animation-delay: 7s; }
+.petal-8 { left: 78%; animation-duration: 20s; animation-delay: 4s; }
+.petal-9 { left: 92%; animation-duration: 15s; animation-delay: 8s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .falling-petal,
+  .hero-names,
+  .hero-subtitle,
+  .hero-date,
+  .hero-scroll {
+    animation: none !important;
+  }
+}
